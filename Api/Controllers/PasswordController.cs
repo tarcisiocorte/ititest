@@ -32,7 +32,15 @@ namespace Iti.Api.Controllers
             {
                 return BadRequest("Senha não pode ser nula");
             }
-            return Ok(_service.IsValid(password));
+            var isValid = _service.IsValid(password);
+            if(isValid)
+            {
+                return Ok(true);
+            }
+            else
+            {
+                return BadRequest(false);
+            }            
         }
     }
 }

@@ -34,12 +34,12 @@ namespace Iti.Tests.IntegrationTests
         }
 
         [Fact]
-        public async Task Should_Return_SatusCode_200_and_False_When_No_Valid_Password_IS_Provided()
+        public async Task Should_Return_SatusCode_400_and_False_When_No_Valid_Password_IS_Provided()
         {
             var invalidPassword = JsonConvert.SerializeObject(new EntityPassword("AbcdAbc123"));
             var data = new StringContent(invalidPassword, Encoding.UTF8, MEDIA_TYPE);
             var response = await _httpClient.PostAsync("/api/Password/validation", data);
-            response.StatusCode.Should().Be(200);
+            response.StatusCode.Should().Be(400);
             response.Content.ReadAsStringAsync().Result.Should().Be("false");
         }
 
