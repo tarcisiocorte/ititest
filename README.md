@@ -20,3 +20,5 @@
  #### Para o design do código foi usado Clean Archicteture com o detalhe que a validação de senha foi implementada na camada de dominio, uma vez que eu assumi que a validação de senha não serve só para a API, mas sim para  qualquer sistema que venha a ser adicionado ao projeto e queria usar esta regra.
  
  #### Um detalhe importante sobre a validação é o fato de usar Fluent Validation. Porém não foi implementado o ```RegisterValidatorsFromAssemblyContaining``` para que não altere o comportamento de retorno da Api, conforme especificado no enunciado do teste.
+ 
+ ###
